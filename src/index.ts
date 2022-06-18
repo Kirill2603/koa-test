@@ -16,7 +16,6 @@ app.use(router.allowedMethods())
 app.listen(PORT, async () => {
   try {
     await mongoose.connect(MONGO_URL)
-    console.log('asd')
   } catch (e) {
     console.error(e)
   }

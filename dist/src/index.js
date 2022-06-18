@@ -25,7 +25,6 @@ app.use(router_1.default.allowedMethods());
 app.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield mongoose.connect(MONGO_URL);
-        console.log('asd');
     }
     catch (e) {
         console.error(e);
