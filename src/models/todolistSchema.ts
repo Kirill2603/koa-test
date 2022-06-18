@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose'
 
 const priority = ['none', 'low', 'middle', 'high']
 const todoSchema = new mongoose.Schema({

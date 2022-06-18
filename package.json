@@ -1,10 +1,11 @@
 {
   "name": "koa",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
-    "dev" : "yarn nodemon src/index.js"
+    "dev": "yarn nodemon --inspect dist/src/index.js",
+    "build": "yarn tsc -w"
   },
   "dependencies": {
     "@koa/router": "^10.1.1",
@@ -13,6 +14,11 @@
     "mongoose": "^6.3.8"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "@types/koa": "^2.13.4",
+    "@types/koa__router": "^8.0.11",
+    "@types/node": "^18.0.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   }
 }
