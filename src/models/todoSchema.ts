@@ -15,6 +15,6 @@ export const todoSchema = new Schema({
     required: false,
     default: 'none'
   },
-}, {collection: 'todos'})
+}, {collection: 'Todos'})
 
 export const Todo = model('Todo', todoSchema)

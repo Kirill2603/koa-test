@@ -16,7 +16,7 @@ const koa_1 = __importDefault(require("koa"));
 const koa_body_1 = __importDefault(require("koa-body"));
 const router_1 = __importDefault(require("./router"));
 const mongoose = require('mongoose');
-const MONGO_URL = 'mongodb+srv://kirill:kirill@cluster0.c5o7vvn.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URL = 'mongodb+srv://kirill:kirill@cluster0.c5o7vvn.mongodb.net/todolistDB?retryWrites=true&w=majority';
 const PORT = 3000;
 const app = new koa_1.default();
 app.use((0, koa_body_1.default)());

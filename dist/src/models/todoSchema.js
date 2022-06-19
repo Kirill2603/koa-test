@@ -14,5 +14,5 @@ exports.todoSchema = new mongoose_1.Schema({
         required: false,
         default: 'none'
     },
-}, { collection: 'todos' });
+}, { collection: 'Todos' });
 exports.Todo = (0, mongoose_1.model)('Todo', exports.todoSchema);
