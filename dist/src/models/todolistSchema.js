@@ -23,12 +23,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Todolist = void 0;
+exports.Todolist = exports.todoListSchema = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const todoSchema_1 = require("./todoSchema");
-const todoListSchema = new mongoose_1.default.Schema({
+exports.todoListSchema = new mongoose_1.default.Schema({
+    user_id: { type: mongoose_1.Schema.Types.ObjectId, required: true, ref: 'User' },
     title: { type: String, required: true },
-    user_id: { type: mongoose_1.Schema.Types.ObjectId, required: true, ref: "Users" },
-    todos: [todoSchema_1.todoSchema],
+    todos: [{ type: mongoose_1.Schema.Types.ObjectId, ref: "Todo" }]
 }, { collection: 'Todolists' });
-exports.Todolist = mongoose_1.default.model('Todolist', todoListSchema);
+exports.Todolist = mongoose_1.default.model('Todolist', exports.todoListSchema);

@@ -1,19 +1,19 @@
-import  { Schema, ObjectId, model} from 'mongoose'
+import  { Schema, model} from 'mongoose'
 
 const priority = ['none', 'low', 'middle', 'high']
 
 
 
 export const todoSchema = new Schema({
-  todolist_id: {type: Schema.Types.ObjectId, required: true, ref: "Todolists"},
+  todolist_id: {type: Schema.Types.ObjectId, required: true, ref: "Todolist"},
   title: {type: String, required: true},
   description: {type: String, required: false, default: ''},
   isDone: {type: Boolean, required: false, default: false},
   priority: {
     type: String,
-    enum: priority,
+    enum: { values: priority, message: `'{VALUE}' is not supported, please enter one of these: 'none', 'low', 'middle', 'high'` },
     required: false,
-    default: 'none'
+    default: 'none',
   },
 }, {collection: 'Todos'})
 
